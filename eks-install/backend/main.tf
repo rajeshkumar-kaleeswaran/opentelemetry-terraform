@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "us-west-2"
+  region = "ap-south-1"
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "demo-terraform-eks-state-s3-bucket"
+  bucket = "my-tf-test-telemetry-bucket"
 
   lifecycle {
     prevent_destroy = false
@@ -27,8 +27,9 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_state" 
   }
 }
 
+# table is is my-tf-test-telemetry-bucket
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "terraform-eks-state-locks"
+  name         = "my-tf-test-telemetry-bucket"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 

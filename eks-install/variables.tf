@@ -1,7 +1,7 @@
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "us-west-2"
+  default     = "ap-south-2"
 }
 
 variable "vpc_cidr" {
@@ -31,7 +31,7 @@ variable "public_subnet_cidrs" {
 variable "cluster_name" {
   description = "Name of the EKS cluster"
   type        = string
-  default     = "my-eks-cluster"
+  default     = "otel-ecommerce-cluster"
 }
 
 variable "cluster_version" {
